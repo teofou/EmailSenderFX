@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.teofou.emailsenderfx.controllers.EmailDataController">
+    <HBox>
+        <Label fx:id="lblEmailSubject" text="ΘΕΜΑ" translateY="5.0">
+         <padding>
+            <Insets left="18.0" />
+         </padding>
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></Label>
+        <TextField fx:id="textFieldEmailSubject" minWidth="500.0"/>
+    </HBox>
+    <HBox>
+        <Label fx:id="lblEmailBody" text="ΚΕΙΜΕΝΟ">
+         <HBox.margin>
+            <Insets right="10.0" />
+         </HBox.margin></Label>
+        <TextArea fx:id="textAreaEmailBody" minWidth="1000.0" prefHeight="80.0"/>
+    </HBox>
+
+</VBox>

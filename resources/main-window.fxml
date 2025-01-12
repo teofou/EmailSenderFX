@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import com.sun.javafx.scene.control.ContextMenuContent.MenuBox?>
+<?import javafx.scene.control.skin.TabPaneSkin.TabHeaderArea?>
+<!--<HBox xmlns="http://javafx.com/javafx"-->
+<!--      xmlns:fx="http://javafx.com/fxml">-->
+<!--    <fx:include fx:id="menuBar" source="menu-bar.fxml"/>-->
+<!--</HBox>-->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.StackedAreaChart?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.github.teofou.emailsenderfx.controllers.MainWindowFXController">
+    <fx:include fx:id="menuBar" source="menu-bar.fxml"/>
+    <ScrollPane >
+
+        <VBox>
+            <MenuBar>
+                <Menu text="sakdsadas">
+                    <MenuItem text="sadsad"/>
+                </Menu>
+            </MenuBar>
+        </VBox>
+        <TabPane fx:id="tabPane">
+            <tabs>
+                <Tab fx:id="mainTab" text="Επιλογή Παραληπτών" closable="false">
+
+                    <VBox minWidth="1000.0" alignment="CENTER">
+                        <Pane>
+                            <VBox.margin>
+                                <Insets top="20.0" bottom="20.0"/>
+                            </VBox.margin>
+                            <fx:include fx:id="emailData" source="email-data.fxml"/>
+                        </Pane>
+                        <Separator />
+                        <Pane>
+                            <VBox.margin>
+                                <Insets top="20.0" bottom="1.0"/>
+                            </VBox.margin>
+                            <fx:include fx:id="mainFolder" source="main-folder.fxml"/>
+                        </Pane>
+                        <Pane>
+                            <VBox.margin>
+                                <Insets top="1.0" bottom="20.0"/>
+                            </VBox.margin>
+                            <fx:include fx:id="subfolder" source="subfolder.fxml"/>
+                        </Pane>
+                        <Separator>
+                            <VBox.margin>
+                                <Insets bottom="20.0"/>
+                            </VBox.margin>
+                        </Separator>
+                        <fx:include fx:id="receivers" source="receivers.fxml"/>
+                        <Separator>
+                            <VBox.margin>
+                                <Insets top="20.0"/>
+                            </VBox.margin>
+                        </Separator>
+                        <Pane>
+                            <VBox.margin>
+                                <Insets top="10.0" bottom="20.0" left="500.0"/>
+                            </VBox.margin>
+                            <fx:include fx:id="emailSend" source="email-send.fxml"/>
+                        </Pane>
+
+                    </VBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+
+
+
+
+
+
+        <!--    <HBox fx:id="mainFolderHBox"/>-->
+        <!--    <HBox fx:id="commonNameSubfolderHBox"/>-->
+        <!--    <VBox fx:id="emailDataVBox"/>-->
+        <!--    <VBox fx:id="receiversTableVBox"/>-->
+        <!--    <VBox fx:id="emailSendVBox"/>-->
+    </ScrollPane>
+</VBox>
+

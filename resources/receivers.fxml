@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import com.github.teofou.emailsenderfx.controllers.CheckBoxTableCellFactory?>
+<?import javafx.scene.text.Text?>
+
+<?import com.github.teofou.emailsenderfx.controllers.ButtonCellFactory?>
+<?import javafx.geometry.Insets?>
+<?import com.github.teofou.emailsenderfx.controllers.InfoReceiversCellFactory?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.github.teofou.emailsenderfx.controllers.ReceiversController">
+    <TableView fx:id="tableView" prefHeight="500">
+        <columns>
+            <TableColumn fx:id="selectedCol" minWidth="43.0" maxWidth="43.0">
+                <graphic>
+                    <CheckBox fx:id="checkBox" onAction="#checkBoxHandle"/>
+                </graphic>
+                <cellFactory>
+                    <CheckBoxTableCellFactory/>
+                </cellFactory>
+                <cellValueFactory>
+                    <PropertyValueFactory property="selected" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nameCol" text="ΠΑΡΑΛΗΠΤΗΣ" prefWidth="140.0">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="emailCol" text="EMAIL" prefWidth="150.0">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="folderCol" text="ΦΑΚΕΛΟΣ" prefWidth="100.0">
+                <cellValueFactory>
+                    <PropertyValueFactory property="receiverFolder" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="infoCol" text="INFO" prefWidth="370.0">
+                <cellFactory>
+                    <InfoReceiversCellFactory/>
+                </cellFactory>
+                <cellValueFactory>
+                    <PropertyValueFactory property="info" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="fullPathCol" text="ΠΛΗΡΗΣ ΔΙΑΔΡΟΜΗ" prefWidth="335.0">
+                <cellValueFactory>
+                    <PropertyValueFactory property="receiverFolderFullPath" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="viewFolderBtnCol" text="" minWidth="80.0" maxWidth="80.0">
+                <cellFactory>
+                    <ButtonCellFactory/>
+                </cellFactory>
+                <cellValueFactory>
+                    <PropertyValueFactory property="viewFolderBtnEnabled"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <Pane>
+        <VBox.margin>
+            <Insets top="10.0"/>
+        </VBox.margin>
+        <HBox fx:id="counterHBox">
+            <Label fx:id="lblTotalReceivers" text="Σύνολο:" labelFor="$textTotalReceivers">
+                <HBox.margin>
+                    <Insets right="3.0"/>
+                </HBox.margin>
+            </Label>
+            <Text fx:id="textTotalReceivers">
+                <HBox.margin>
+                    <Insets right="15.0"/>
+                </HBox.margin>
+            </Text>
+
+            <Label fx:id="lblTotalReadyToSendReceivers" text="Έτοιμοι προς αποστολή:" labelFor="$textTotalReadyToSendReceivers">
+                <HBox.margin>
+                    <Insets right="3.0"/>
+                </HBox.margin>
+            </Label>
+            <Text fx:id="textTotalReadyToSendReceivers" text="0">
+                <HBox.margin>
+                    <Insets right="15.0"/>
+                </HBox.margin>
+            </Text>
+
+            <Label fx:id="lblSelectedReceivers" text="Επιλεγμένοι:" labelFor="$textSelectedReceivers">
+                <HBox.margin>
+                    <Insets right="3.0"/>
+                </HBox.margin>
+            </Label>
+            <Text fx:id="textSelectedReceivers" text="0">
+                <HBox.margin>
+                    <Insets right="15.0"/>
+                </HBox.margin>
+            </Text>
+
+
+
+        </HBox>
+    </Pane>
+
+
+</VBox>

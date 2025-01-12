@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<Tab xmlns="http://javafx.com/javafx"
+     xmlns:fx="http://javafx.com/fxml"
+     fx:id="resultsTab" text="Αποτελέσματα" fx:controller="com.github.teofou.emailsenderfx.controllers.ResultsController">
+        <TableView fx:id="tableView">
+                <columns>
+                        <TableColumn fx:id="nameCol" text="ΠΑΡΑΛΗΠΤΗΣ">
+                                <cellValueFactory>
+                                        <PropertyValueFactory property="name"/>
+                                </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="emailCol" text="EMAIL">
+                                <cellValueFactory>
+                                        <PropertyValueFactory property="email" />
+                                </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="folderCol" text="ΦΑΚΕΛΟΣ">
+                                <cellValueFactory>
+                                        <PropertyValueFactory property="receiverFolder" />
+                                </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="infoCol" text="INFO">
+                                <cellValueFactory>
+                                        <PropertyValueFactory property="info" />
+                                </cellValueFactory>
+                        </TableColumn>
+                </columns>
+        </TableView>
+</Tab>
+
